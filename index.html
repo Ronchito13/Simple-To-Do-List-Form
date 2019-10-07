@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Webhose Application Developer Assignment</title>
+    <meta name="author" content="Ron Dayan" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="./js/getCountries.js"></script>
+    <script src="./js/validation.js"></script>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body onload="restoreRequests()">
+    <div id="form-main">
+      <div id="form-div">
+        <div class="form" id="form1">
+          <p class="email">
+            <input
+              name="email"
+              type="text"
+              class="feedback-input"
+              id="email"
+              placeholder="Email"
+            />
+          </p>
+          <span id="emailError"></span>
+
+          <p class="domain">
+            <input
+              name="domain"
+              type="text"
+              class="feedback-input"
+              id="domain"
+              placeholder="Domain"
+            />
+          </p>
+          <span id="domainError"></span>
+
+          <p class="sourceType">
+            <select
+              name="sourceType"
+              type="text"
+              class="feedback-input"
+              id="sourceType"
+            >
+              <option value="0" selected disabled>Select source type</option>
+              <option value="news">News</option>
+              <option value="blogs">Blogs</option>
+              <option value="discussions">Discussions</option>
+              <option value="reviews">Reviews</option>
+            </select>
+          </p>
+          <span id="sourceTypeError"></span>
+
+          <p class="country">
+            <select
+              name="sourceType"
+              type="text"
+              class="feedback-input"
+              id="country"
+            >
+              <option value="0" selected disabled>Select country</option>
+            </select>
+          </p>
+          <span id="countryError"></span>
+
+          <p class="reason">
+            <textarea
+              name="text"
+              class="feedback-input"
+              id="reason"
+              placeholder="Reason"
+            ></textarea>
+          </p>
+          <span id="reasonError"></span>
+
+          <div class="submit">
+            <button type="submit" onclick="return formValid()" id="button-blue">
+              SEND
+            </button>
+            <div class="ease"></div>
+            <br />
+            <button class="clearForm" onclick="cleanForm()">Clear Form</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <table id="table" border="1">
+      <tr class="tableHeader">
+        <th>Email</th>
+        <th>Domain</th>
+        <th>Source Type</th>
+        <th>Country</th>
+        <th>Reason</th>
+        <th>Delete</th>
+      </tr>
+    </table>
+
+    <div class="center gapDown">
+      <button class="clearRequests" onclick="closeAllRequests()">
+        Clear All Requests
+      </button>
+    </div>
+  </body>
+</html>
